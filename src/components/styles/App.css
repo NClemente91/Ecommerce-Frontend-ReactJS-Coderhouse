@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../../images/banner-100.jpg");
+}
+.App img {
+  width: 400px;
+  height: 400px;
+  margin-top: 10%;
+}
+.App h1 {
+  width: 80%;
+  margin: 20px auto;
+  padding: 12px 0;
+  background-color: white;
+
+}

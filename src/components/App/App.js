@@ -9,7 +9,7 @@ const App = () => {
   return (
     <div className="general-container">
       <NavBar/>
-      <ItemListContainer />
+      <ItemListContainer titleProduct="Productos"/>
     </div>
   );
 }

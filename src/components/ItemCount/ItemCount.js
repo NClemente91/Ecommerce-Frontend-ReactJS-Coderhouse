@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 
 import '../ItemCount/ItemCount.css';
-import imgArandanos from '../../images/products/Arandanos.jpg';
 
 const ItemCount = ({stock, initial, onAdd}) => {
 
@@ -30,10 +29,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
     return (
         <div id="indCard">
             <div className="card">
-                <img src={imgArandanos} className="productImage" alt="Producto"/>
                 <div className="card-body">
-                    <h5 className="card-title">Arandanos</h5>
-                    <p className="card-text">Envases de 1 kilogramo</p>
                     <div className="containerQuantityProduct mb-3">
                         <button className="btn btn-secondary mr-2" onClick={removeQuantity} disabled={disableRemove}>-</button>
                         <span id="quantityProduct">{quantity}</span>

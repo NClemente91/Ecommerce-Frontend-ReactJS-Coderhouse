@@ -6,7 +6,7 @@ import '../ItemDetailContainer/ItemDetailContainer.css'
 
 const ItemDetailContainer = () => {
 
-    const [itemDetail, setItemDetail] = useState([]);
+    const [itemDetail, setItemDetail] = useState(null);
 
     useEffect(() => {
         
@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
 
         getItem
             .then(data => {
-                setItemDetail(data);
+                setItemDetail(data)
             })
             .catch(err => console.log(err))
             .finally(() => console.log('Peticion Finalizada'))

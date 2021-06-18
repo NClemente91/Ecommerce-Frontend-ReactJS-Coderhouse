@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 import updatedProducts from '../../Products';
 import ItemDetail from '../ItemDetail/ItemDetail';
@@ -8,17 +9,21 @@ const ItemDetailContainer = () => {
 
     const [itemDetail, setItemDetail] = useState(null);
 
+    const {id} = useParams();
+
     useEffect(() => {
         
         const getItem = new Promise ((resolve,reject) => {
             setTimeout(() => {
-                updatedProducts !== [] ? resolve(updatedProducts[0]) : reject('Error al traer Producto')
+                updatedProducts !== [] ? 
+                resolve(updatedProducts) : 
+                reject('Error al traer Producto')
             }, 2000);
         });
 
         getItem
             .then(data => {
-                setItemDetail(data)
+                updatedProducts && setItemDetail((data.filter(p=>p.title == id))[0])
             })
             .catch(err => console.log(err))
             .finally(() => console.log('Peticion Finalizada'))
@@ -26,8 +31,7 @@ const ItemDetailContainer = () => {
     },[]);
 
     return (
-        <div className="container-fluid mt-2">
-            <h1 className="title-detail">DETALLE DEL PRODUCTO</h1>
+        <div className="detailContainerGrl container-fluid">
             <div className="detail-card">
                 <ItemDetail element={itemDetail}/>
             </div>

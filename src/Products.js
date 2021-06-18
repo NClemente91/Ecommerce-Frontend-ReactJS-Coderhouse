@@ -9,6 +9,7 @@ const updatedProducts = [
     {
         id : 1,
         title : "Arandanos",
+        categoryProduct: "frutas",
         description: "Arandanos enteros congelados - Envase de 1Kg",
         price: 385,
         stock: 12,
@@ -17,6 +18,7 @@ const updatedProducts = [
     {
         id : 2,
         title : "Frutillas",
+        categoryProduct: "frutas",
         description: "Frutillas enteros congelados - Envase de 500gr",
         price: 220,
         stock: 8,
@@ -25,6 +27,7 @@ const updatedProducts = [
     {
         id : 3,
         title : "Duraznos",
+        categoryProduct: "frutas",
         description: "Duraznos en cubos congelados - Envase de 1Kg",
         price: 385,
         stock: 15,
@@ -33,6 +36,7 @@ const updatedProducts = [
     {
         id : 4,
         title : "Espinaca",
+        categoryProduct: "verduras",
         description: "Espinaca cortada congelada - Envase de 1Kg",
         price: 286,
         stock: 12,
@@ -41,6 +45,7 @@ const updatedProducts = [
     {
         id : 5,
         title : "Mix Primavera",
+        categoryProduct: "mix",
         description: "Mix Primavera (chaucha, zanahoria, choclos y arvejas) congelado - Envase de 1Kg",
         price: 351,
         stock: 8,
@@ -49,6 +54,7 @@ const updatedProducts = [
     {
         id : 6,
         title : "Choclo",
+        categoryProduct: "verduras",
         description: "Choclos en granos congelados - Envase de 1Kg",
         price: 387,
         stock: 15,

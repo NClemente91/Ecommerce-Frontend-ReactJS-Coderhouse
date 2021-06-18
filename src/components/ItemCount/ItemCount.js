@@ -45,7 +45,8 @@ const ItemCount = ({stock, initial, onAdd}) => {
                             (quantity>0)?onAdd(quantity):alert("Agregar Cantidad");
                             }
                         }>
-                    Agregar</button>
+                        Agregar
+                    </button>
                     <div>
                         <span>Stock Disponible: {stock}</span>
                     </div>

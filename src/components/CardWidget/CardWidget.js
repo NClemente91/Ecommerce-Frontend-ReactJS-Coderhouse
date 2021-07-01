@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import logoCarrito from '../../images/Carrito.svg'
 import '../CardWidget/CardWidget.css'
@@ -6,9 +7,9 @@ import '../CardWidget/CardWidget.css'
 const CardWidget = () => {
     return (
         <div className="logoCarrito">
-            <a href="#">
+            <Link to='/card'>
                 <img className="logoCarrito-img" src={logoCarrito} alt="Carrito" />
-            </a>
+            </Link>
         </div>
     );
 }

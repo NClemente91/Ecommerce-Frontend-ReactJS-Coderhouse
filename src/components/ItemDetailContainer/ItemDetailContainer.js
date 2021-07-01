@@ -7,33 +7,33 @@ import '../ItemDetailContainer/ItemDetailContainer.css'
 
 const ItemDetailContainer = () => {
 
-    const [itemDetail, setItemDetail] = useState(null);
+    const [itemDetail, setItemDetail] = useState([]);
 
-    const {id} = useParams();
+    const {idP} = useParams();
 
     useEffect(() => {
-        
+
         const getItem = new Promise ((resolve,reject) => {
             setTimeout(() => {
-                updatedProducts !== [] ? 
-                resolve(updatedProducts) : 
+                updatedProducts !== [] ?
+                resolve(updatedProducts) :
                 reject('Error al traer Producto')
             }, 2000);
         });
 
         getItem
             .then(data => {
-                updatedProducts && setItemDetail((data.filter(p=>p.title == id))[0])
+                setItemDetail((data.filter(p => p.id == idP)));
             })
             .catch(err => console.log(err))
             .finally(() => console.log('Peticion Finalizada'))
-        
-    },[]);
+
+    },[idP]);
 
     return (
         <div className="detailContainerGrl container-fluid">
             <div className="detail-card">
-                <ItemDetail element={itemDetail}/>
+                <ItemDetail element={itemDetail} />
             </div>
         </div>
     );

@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
                 updatedProducts !== [] ?
                 resolve(updatedProducts) :
                 reject('Error al traer Producto')
-            }, 2000);
+            }, 500);
         });
 
         getItem

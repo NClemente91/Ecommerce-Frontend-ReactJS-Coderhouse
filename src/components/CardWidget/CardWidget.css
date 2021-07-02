@@ -5,6 +5,10 @@
     justify-content: center;
 }
 
+.opacityCard{
+    opacity: 0;
+}
+
 .logoCarrito-img {
     width: 50px;
     margin: 25px auto;

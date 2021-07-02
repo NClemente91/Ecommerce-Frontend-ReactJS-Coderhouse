@@ -15,7 +15,7 @@ const ItemListContainer = () => {
         const getProducts = new Promise ((resolve,reject) => {
             setTimeout(() => {
                 updatedProducts !== [] ? resolve(updatedProducts) : reject('Error al traer Productos')
-            }, 2000);
+            }, 500);
         });
 
         getProducts

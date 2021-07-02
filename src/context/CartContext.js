@@ -28,8 +28,8 @@ export const CartProvider = ({children}) => {
 
     //PARA REMOVER UN ITEM SEGUN SU ID DEL CARRITO
     const removeItem = (itemID) => {
-        const cartProductsRemoveId = cartState.findIndex(i => itemID === i.items.id);
-        setCartState(cartState.slice(cartProductsRemoveId, 1));
+        const cartStateFilter = cartState.filter(x => x.items.id !== itemID);
+        cartStateFilter.length !== 0 ? setCartState(cartStateFilter) : clear();
     }
 
     //PARA REMOVER TODOS LOS ITEM DEL CARRITO
@@ -54,7 +54,7 @@ export const CartProvider = ({children}) => {
     const totalPrice = () => {
         let cartPrice = 0;
         cartState.map(c => cartPrice += (c.items.price * c.quantities));
-        return cartPrice;
+        return cartPrice || 0;
     }
 
     return(

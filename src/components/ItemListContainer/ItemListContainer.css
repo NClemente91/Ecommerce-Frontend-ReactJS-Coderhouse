@@ -1,42 +1,33 @@
 .productContainerGrl {
-    text-align: center;
-    width: 100vw;
-    height: 88vh;
-    background-image: url("../../images/FondoClaro.png");
-    background-position: center;
-    background-repeat:repeat-y;
-    background-size: cover;
+  text-align: center;
+  width: 100vw;
+  height: 88vh;
+  background-image: url("../../images/FondoClaro.png");
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: cover;
 }
 
-.productContainer-nav{
-    width: 90%;
-    height: 100px;
-    margin: 0 auto;
-    position: relative;
-    top: 20px;
+.productContainer-nav {
+  width: 90%;
+  height: 100px;
+  margin: 0 auto;
+  position: relative;
+  top: 20px;
 }
-.productContainer-nav h2{
-    width: 90%;
-    height: 150px;
-    margin: 0 auto;
-    height: 40px;
-    font-size: 2rem;
-    text-align: center;
-    color: #27571b;
-}
-.productContainer-nav div{
-    margin-top: 20px;
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
+.productContainer-nav div {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 
-.itemCategory{
-    width: 100%;
-    margin: 0 auto;
-    border-radius: 5px;
-    border: 1px solid #27571B;
-    background-color: white;
-    font-size: 1.25rem;
-    color: #f25c05;
-    text-decoration: none;
+.itemCategory {
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 5px;
+  border: 1px solid #27571b;
+  background-color: white;
+  font-size: 1.25rem;
+  color: #f25c05;
+  text-decoration: none;
 }

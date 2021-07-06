@@ -1,43 +1,38 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { getFireStore } from "../../firebase/firebase";
 
-import updatedProducts from '../../Products';
-import ItemDetail from '../ItemDetail/ItemDetail';
-import '../ItemDetailContainer/ItemDetailContainer.css'
+import ItemDetail from "../ItemDetail/ItemDetail";
+import "../ItemDetailContainer/ItemDetailContainer.css";
 
 const ItemDetailContainer = () => {
+  const [itemDetail, setItemDetail] = useState([]);
+  const { idP } = useParams();
 
-    const [itemDetail, setItemDetail] = useState([]);
+  useEffect(() => {
+    const db = getFireStore();
+    const itemCollection = db.collection("items");
+    const item = itemCollection.doc(idP);
+    item
+      .get()
+      .then((doc) => {
+        if (!doc.exists) {
+          console.log("Item inexistente");
+          return;
+        }
+        setItemDetail([{ id: doc.id, ...doc.data() }]);
+      })
+      .catch((err) => console.log(err))
+      .finally(() => console.log("Peticion Finalizada"));
+  }, [idP]);
 
-    const {idP} = useParams();
-
-    useEffect(() => {
-
-        const getItem = new Promise ((resolve,reject) => {
-            setTimeout(() => {
-                updatedProducts !== [] ?
-                resolve(updatedProducts) :
-                reject('Error al traer Producto')
-            }, 500);
-        });
-
-        getItem
-            .then(data => {
-                setItemDetail((data.filter(p => p.id == idP)));
-            })
-            .catch(err => console.log(err))
-            .finally(() => console.log('Peticion Finalizada'))
-
-    },[idP]);
-
-    return (
-        <div className="detailContainerGrl container-fluid">
-            <div className="detail-card">
-                <ItemDetail element={itemDetail} />
-            </div>
-        </div>
-    );
-
-}
+  return (
+    <div className="detailContainerGrl container-fluid">
+      <div className="detail-card">
+        <ItemDetail element={itemDetail} />
+      </div>
+    </div>
+  );
+};
 
 export default ItemDetailContainer;

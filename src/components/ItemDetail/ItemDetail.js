@@ -31,9 +31,16 @@ const ItemDetail = ({ element }) => {
               {!eventAdd ? (
                 <ItemCount stock={element[0].stock} initial={0} onAdd={onAdd} />
               ) : (
-                <Link to="/card">
-                  <button className="btn btn-primary">Terminar Compra</button>
-                </Link>
+                <>
+                  <Link to="/categorias/todos">
+                    <button className="btn btn-primary mb-3">
+                      SEGUIR COMPRANDO
+                    </button>
+                  </Link>
+                  <Link to="/cart">
+                    <button className="btn btn-primary">IR AL CARRITO</button>
+                  </Link>
+                </>
               )}
               <p className="card-text">$ {element[0].price}</p>
             </div>

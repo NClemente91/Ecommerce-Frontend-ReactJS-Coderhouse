@@ -10,8 +10,6 @@ import Contact from "../Contact/Contact";
 import Cart from "../Cart/Cart";
 import CheckOut from "../CheckOut/CheckOut";
 
-import "../App/App.css";
-
 const App = () => {
   return (
     <CartProvider>
@@ -27,9 +25,6 @@ const App = () => {
           <Route exact path="/productos/:idP">
             <ItemDetailContainer />
           </Route>
-          <Route exact path="/contacto">
-            <Contact />
-          </Route>
           <Route exact path="/cart">
             <Cart />
           </Route>
@@ -37,6 +32,7 @@ const App = () => {
             <CheckOut />
           </Route>
         </Switch>
+        <Contact />
       </BrowserRouter>
     </CartProvider>
   );

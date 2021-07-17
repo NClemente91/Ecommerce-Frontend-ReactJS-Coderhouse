@@ -1,19 +1,11 @@
-.detailContainerGrl{
-    height: 88vh;
-    background-image: url("../../images/FondoClaro.png");
-    background-position: center;
-    background-repeat:repeat-y;
-    background-size: cover;
-}
-.detail-card{
-    position: relative;
-    top: 30px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-.title-detail{
-    width: 90%;
-    margin: 5px auto;
-    text-align: center;
+.detailContainerGrl {
+  min-height: calc(100vh - 200px);
+  background-image: url("../../images/FondoClaro.png");
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: cover;
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }

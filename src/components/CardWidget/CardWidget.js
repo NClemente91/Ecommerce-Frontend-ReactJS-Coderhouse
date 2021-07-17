@@ -13,11 +13,11 @@ const CardWidget = () => {
         totalQuantity() === 0 ? "logoCarrito opacityCard" : "logoCarrito"
       }
     >
-      <Link to="/cart">
-        <span>({totalQuantity()})</span>
+      <Link to="/cart" className="logoCarrito-link">
+        <span className="logoCarrito-link-quantity">{totalQuantity()}</span>
         <img
-          className="logoCarrito-img"
-          src="/assets/images/Carrito.svg"
+          className="logoCarrito-link-img"
+          src="/assets/images/icons/Carrito.svg"
           alt="Carrito"
         />
       </Link>

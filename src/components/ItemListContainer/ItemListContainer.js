@@ -7,9 +7,11 @@ import ItemList from "../ItemList/ItemList";
 
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
   const { category } = useParams();
 
   useEffect(() => {
+    setLoading(true);
     const db = getFireStore();
     const itemCollection = db.collection("items");
     const filterItems =
@@ -28,15 +30,15 @@ const ItemListContainer = () => {
             return { id: doc.id, ...doc.data() };
           })
         );
+        setLoading(false);
       })
-      .catch((err) => console.log(err))
-      .finally(() => console.log("Peticion Finalizada"));
+      .catch((err) => console.log(err));
   }, [category]);
 
   return (
-    <div className="productContainerGrl container-fluid">
-      <section className="productContainer-nav">
-        <div>
+    <div className="productContainerGrl">
+      <section className="productContainer-navGral">
+        <div className="productContainer-nav">
           <Link className="itemCategory" to="/categorias/todos">
             TODOS
           </Link>
@@ -51,7 +53,8 @@ const ItemListContainer = () => {
           </Link>
         </div>
       </section>
-      <ItemList products={products} />
+      {loading && <div className="loader center-spin" />}
+      {!loading && <ItemList products={products} />}
     </div>
   );
 };

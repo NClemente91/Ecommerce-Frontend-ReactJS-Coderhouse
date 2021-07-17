@@ -5,13 +5,19 @@ import "../HomePage/HomePage.css";
 
 const HomePage = () => {
   return (
-    <div className="HomePage-container">
-      <section className="HomePage-container-info">
-        <img src="/assets/images/LogoPpal.svg" alt="Logo SG Congelados" />
-        <span>COCINAR SANO, RICO y RÁPIDO ES POSIBLE</span>
-        <Link to="/categorias/todos" className="btnVerProductos">
+    <div className="homePage-container">
+      <section className="homePage-container-info">
+        <img
+          className="homePage-container-info-img"
+          src="/assets/images/icons/LogoPpal.svg"
+          alt="Logo SG Congelados"
+        />
+        <span className="homePage-container-info-span">
+          COCINAR SANO, RICO y RÁPIDO ES POSIBLE
+        </span>
+        <Link to="/categorias/todos" className="btn-container">
           <button type="button" className="btn btn-light">
-            VER PRODUCTOS
+            <span className="btn-container-text">VER PRODUCTOS</span>
           </button>
         </Link>
       </section>

@@ -18,83 +18,117 @@ const Cart = () => {
   };
 
   return (
-    <div className="container-fluid">
-      <h1> Carrito de compras</h1>
+    <div className="cartContainerGrl">
+      <h1 className="cartContainerGrl-titulo"> Carrito de compras</h1>
       <div>
         {cartState[0].quantities === 0 ? (
-          <div>
-            <h3> Carrito de Compras Vacío</h3>
-            <Link to="/categorias/todos">
-              <button className="btn btn-primary">Buscar Productos</button>
-            </Link>
+          <div className="cartContainerGrl-empty">
+            <h3 className="cartContainerGrl-empty_title">
+              Carrito de Compras Vacío
+            </h3>
+            <div className="cartContainerGrl-empty_image">
+              <img src="/assets/images/icons/ct-icon.svg" alt="Logo triste" />
+            </div>
+            <div className="cartContainerGrl-empty_a">
+              <Link to="/categorias/todos">
+                <button className="btn btn-primary" id="bg-color-btn">
+                  Buscar Productos
+                </button>
+              </Link>
+            </div>
           </div>
         ) : (
-          <div className="row">
+          <div className="cartContainerGrl-description">
             <div className="col-8">
-              <h3>Descripción de tu pedido</h3>
-              <table className="table">
-                <thead>
-                  <tr>
-                    <th scope="col">Producto</th>
-                    <th scope="col">Descripción</th>
-                    <th scope="col">Cantidad</th>
-                    <th scope="col">Precio</th>
-                    <th scope="col"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {cartState.map((pC) => {
-                    return (
-                      <tr key={pC.items.id}>
-                        <td>
-                          <img
-                            src={`/assets/images/products/${pC.items.pictureURL}`}
-                            className="card-img-prod"
-                            alt="Imagen de producto"
-                          />
-                        </td>
-                        <td>{pC.items.title}</td>
-                        <td>{pC.quantities} un.</td>
-                        <td>${pC.items.price}</td>
-                        <td>
-                          <button
-                            className="btn btn-primary"
-                            onClick={() => clearPartialCart(pC.items.id)}
-                          >
-                            X
-                          </button>
-                        </td>
-                      </tr>
-                    );
-                  })}
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                      <button
-                        className="btn btn-danger"
-                        onClick={() => clearCart()}
-                      >
-                        VACIAR CARRITO
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+              <div className="cartContainerGrl-description_table">
+                <h3 className="cartContainerGrl-description_tableTitle">
+                  Descripción de tu pedido
+                </h3>
+                <table className="table aling-text">
+                  <thead>
+                    <tr>
+                      <th scope="col">Producto</th>
+                      <th scope="col">Descripción</th>
+                      <th scope="col">Cantidad</th>
+                      <th scope="col">Precio</th>
+                      <th scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cartState.map((pC) => {
+                      return (
+                        <tr key={pC.items.id}>
+                          <td>
+                            <img
+                              src={`/assets/images/products/${pC.items.pictureURL}`}
+                              className="card-img-prod"
+                              alt="Imagen de producto"
+                            />
+                          </td>
+                          <td>{pC.items.title}</td>
+                          <td>{pC.quantities} un.</td>
+                          <td>${pC.items.price}</td>
+                          <td>
+                            <button
+                              className="btn btn-primary"
+                              id="bg-color-btn"
+                              onClick={() => clearPartialCart(pC.items.id)}
+                            >
+                              x
+                            </button>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>
+                        <button
+                          className="btn btn-danger"
+                          onClick={() => clearCart()}
+                        >
+                          Limpiar Carrito
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
             <div className="col-4">
-              <h3>Resumen de tu pedido</h3>
-              <div className="mb-5">
-                <h4>Cant. Prod: {totalQuantity()} un.</h4>
-                <h4>SubTotal : $ {totalPrice()}</h4>
-                <h4>Envío: Gratis</h4>
-                <h4>TOTAL: $ {totalPrice()}</h4>
+              <div className="cartContainerGrl-description_table">
+                <h3 className="cartContainerGrl-description_resumenTitle">
+                  Resumen de tu pedido
+                </h3>
+                <div className="mb-5">
+                  <h4 className="resumen-title">
+                    <span className="resumen-title_span">Cant. Prod:</span>{" "}
+                    {totalQuantity()} un.
+                  </h4>
+                  <h4 className="resumen-title">
+                    <span className="resumen-title_span">SubTotal:</span> ${" "}
+                    {totalPrice()}
+                  </h4>
+                  <h4 className="resumen-title">
+                    <span className="resumen-title_span">Envío:</span> Gratis
+                  </h4>
+                  <h4 className="resumen-title">
+                    <span className="resumen-title_span">TOTAL:</span> ${" "}
+                    {totalPrice()}
+                  </h4>
+                </div>
+                <Link to="/checkout">
+                  <button
+                    className="btn btn-primary center-btn"
+                    id="bg-color-btn"
+                  >
+                    FINALIZAR COMPRA
+                  </button>
+                </Link>
               </div>
-              <Link to="/checkout">
-                <button className="btn btn-primary">FINALIZAR COMPRA</button>
-              </Link>
             </div>
           </div>
         )}

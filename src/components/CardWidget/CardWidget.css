@@ -9,7 +9,17 @@
   opacity: 0.4;
 }
 
-.logoCarrito-img {
+.logoCarrito-link {
+  text-decoration: none;
+}
+
+.logoCarrito-link-quantity {
+  color: #f25c05;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.logoCarrito-link-img {
   width: 50px;
   margin: 25px auto;
 }

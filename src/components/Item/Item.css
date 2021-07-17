@@ -1,7 +1,5 @@
-.product{
-    margin: 0 auto;
-}
-.linkProduct{
-    color: black;
-    text-decoration: none;
+.product {
+  margin: 0 auto;
+  color: black;
+  text-decoration: none;
 }

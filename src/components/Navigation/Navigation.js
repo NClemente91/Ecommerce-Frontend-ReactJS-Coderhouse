@@ -11,7 +11,7 @@ const Navigation = () => {
           <Link to="/" className="navbar-brand">
             <img
               className="logoSG-img"
-              src="/assets/images/LogoPpal.svg"
+              src="/assets/images/icons/LogoPpal.svg"
               alt="Logo SG Congelados"
             />
           </Link>
@@ -30,17 +30,12 @@ const Navigation = () => {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <Link to="/" className="nav-link">
-                  INICIO
+                  <span className="nav-link-span">INICIO</span>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link to="/categorias/todos" className="nav-link">
-                  PRODUCTOS
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/contacto" className="nav-link">
-                  CONTACTO
+                  <span className="nav-link-span">PRODUCTOS</span>
                 </Link>
               </li>
             </ul>

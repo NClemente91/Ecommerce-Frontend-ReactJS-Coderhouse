@@ -1,15 +1,15 @@
 .navbar-container {
-    min-width: 320px;
-    width: 95%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
+  min-width: 320px;
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
 }
 
-.navigation-container{
-    width: 100%;
+.navigation-container {
+  width: 100%;
 }
 
-.cardWidget-container{
-    width: 100px;
+.cardWidget-container {
+  width: 100px;
 }

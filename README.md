@@ -39,6 +39,7 @@ Es una e-commmers para venta de productos congelados en Paraná, Entre Rios.
    ```
    ​
    para correr el proyecto, que estará disponible en http://localhost:3000
+     
 
 ### Dependencias 📦
 
@@ -46,6 +47,9 @@ Es una e-commmers para venta de productos congelados en Paraná, Entre Rios.
 -Uso de Bootstrap para manejar algunos estilos.
 ​
 -Uso de React Router Dom para la navegación​
+
+### Ecommerce en funcionamiento 🛠️
+![Image](https://github.com/NClemente91/ProyectoReactClemente/blob/main/public/assets/gif/proyFinalReactClemente.gif)
 
 ### Creador ✒️
 

@@ -1,6 +1,6 @@
 .checkoutContainerGrl {
   width: 100vw;
-  height: calc(100vh - 200px);
+  min-height: calc(100vh - 200px);
   background-image: url("../../images/FondoClaro.png");
   background-position: center;
   background-repeat: repeat;
